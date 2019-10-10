@@ -18,8 +18,13 @@ public class MesoInherit extends MesoAbstract {
 	
 
 	
-	
-	public ArrayList<MesoStation> readFile(String fileName) throws IOException{
+	/**
+	 * 
+	 * @param String name of the file to be read
+	 * @return ArrayList<MesoStation> an array list of all stations in the file
+	 * @throws IOException
+	 */
+	public static ArrayList<MesoStation> readFile(String fileName) throws IOException{
 		
 		ArrayList<MesoStation> stations = new ArrayList <MesoStation>();
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
@@ -79,9 +84,9 @@ public class MesoInherit extends MesoAbstract {
 	}
 
 	public String letterAverage() {
-		
-		
-		return null;
+		char character = (char) averages[2];
+		String toReturn = "" + character;
+		return toReturn;
 	}
 
 }
