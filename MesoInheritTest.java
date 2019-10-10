@@ -53,5 +53,18 @@ public class MesoInheritTest {
 		
 		
 	}
+	
+	public void LetterAvgTest(){
+		
+		MesoStation testStation = new MesoStation("AAZZ");
+		MesoInherit testInherit = new MesoInherit(testStation);
+		
+		String actual = testInherit.letterAverage();
+		
+		String expected = "N";
+		
+		Assert.assertEquals(expected, actual);
+		
+	}
 
 }
