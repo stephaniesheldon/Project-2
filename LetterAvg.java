@@ -32,11 +32,14 @@ public class LetterAvg {
 	}
 	
 	
-	/*
-	String toReturn = Integer.toString(numOfSame);
-	toReturn = toReturn + "\nThey are:\n";
-	for(int i = 0; i < numOfSame; i++){
-		toReturn = toReturn + matchingNames.get(i) + "\n";
+	public String toString(){
+		String toReturn;
+		toReturn = "\nThey are:\n";
+		for(int i = 0; i < matchingNames.size(); i++){
+			toReturn = toReturn + matchingNames.get(i) + "\n";
+		}
+		return toReturn;
 	}
-	*/
+	
+	
 }
