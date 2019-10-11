@@ -28,14 +28,20 @@ public class PosAvg {
 	
 	public String toString(){
 		//This index is average of NOWA and OILT, NEWP and OKCE, and so on.
-		String toReturn = "This index is average of "
-				+ this.getEquivalentAverage(1) + this.getEquivalentAverage(2)
-				+ "and so on.";
-		return toReturn;
+		String toReturn;
+		try {
+			toReturn = "This index is average of "
+					+ this.getEquivalentAverage(1) + this.getEquivalentAverage(2)
+					+ "and so on.";
+			return toReturn;
+		} catch (IOException e) {
+			return null;
+		}
+		
 	}
 	
-	public String getEquivalentAverage(int N){
-
+	public String getEquivalentAverage(int N) throws IOException{
+			this.indexOfStation();
 			String upperName = allNames.get(trueIndex - N);
 			String lowerName = allNames.get(trueIndex + N);
 			return upperName + " and " + lowerName + ", ";
