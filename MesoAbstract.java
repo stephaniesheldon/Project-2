@@ -4,6 +4,7 @@
 */
 public abstract class MesoAbstract 
 {
+	protected MesoStation station;
 	//Abstract method calAverage to return integer array.
 	abstract int[] calAverage();
 

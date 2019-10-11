@@ -17,10 +17,10 @@ public class PosAvgTest {
 	@Test
 	public void indexOfStationTest() {
 		String station = "ADAX";
-		String expected = "2";
+		int expected = 2;
 		
 		PosAvg posTest = new PosAvg(station);
-		String actual;
+		int actual;
 		try {
 			actual = posTest.indexOfStation();
 			Assert.assertEquals(expected, actual);
@@ -29,15 +29,17 @@ public class PosAvgTest {
 		}
 	}
 	
+	@Test
 	public void getEquivalentAverageTest(){
 		
 		String station = "BRIS";
 		PosAvg posTest = new PosAvg(station);
 		
-		String expected = "BOIS and BUFF,";
+		String expected = "BOIS and BUFF, ";
 		String actual = posTest.getEquivalentAverage(2);
+		System.out.println(posTest.getEquivalentAverage(2));
 		
 		Assert.assertEquals(expected, actual);
 	}
-
+	
 }

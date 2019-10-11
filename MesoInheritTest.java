@@ -66,5 +66,4 @@ public class MesoInheritTest {
 		Assert.assertEquals(expected, actual);
 		
 	}
-
 }

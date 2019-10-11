@@ -11,13 +11,16 @@ public class LetterAvg {
 		this.letterAverage = letterAverage;
 	}
 
+	
+	
+	
 	public int numberOfStationWithLetterAvg() throws IOException {
 		
 		
 			matchingNames = new ArrayList<String>();
 		
 			ArrayList<MesoStation> allNames = MesoInherit.readFile("Mesonet.txt");
-			for(int i = 0; i<77; i++){
+			for(int i = 0; i<allNames.size(); i++){
 				String stationName = allNames.get(i).getStID();
 				char firstLetter = stationName.charAt(0);
 				
@@ -29,6 +32,8 @@ public class LetterAvg {
 			int numOfSame = matchingNames.size();
 		return numOfSame;	
 	}
+	
+	
 	
 	
 	public String toString(){

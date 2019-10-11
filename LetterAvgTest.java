@@ -16,19 +16,19 @@ public class LetterAvgTest {
 
 	@Test
 	public void letterAvgtest() throws IOException {
-		LetterAvg letterAvgTest = new LetterAvg("C");
-		String actual = letterAvgTest.numberOfStationWithLetterAvg();
+		LetterAvg letterAvgTest = new LetterAvg('C');
+		int actual = letterAvgTest.numberOfStationWithLetterAvg();
 		
-		String expected = "11";
+		int expected = 11;
 		Assert.assertEquals(expected, actual);
 	}
 
 	
 	public void toStringTest(){
-		LetterAvg letterAvgTest = new LetterAvg("C");
+		LetterAvg letterAvgTest = new LetterAvg('C');
 		String actual = letterAvgTest.toString();
 		
-		String expected = "\nThey are:\nCAMA\nCARL\nCENT\nCHAN\nCHER\nCHEY\nCHIC\nCLAY\nCLOU\nCOOK\nCOPA";
+		String expected = "\nThey are:\nCAMA\nCARL\nCENT\nCHAN\nCHER\nCHEY\nCHIC\nCLAY\nCLOU\nCOOK\nCOPA\n";
 		
 		Assert.assertEquals(expected,actual);
 	}
