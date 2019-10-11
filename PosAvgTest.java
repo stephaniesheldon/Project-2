@@ -27,8 +27,17 @@ public class PosAvgTest {
 		} catch (IOException e) {
 			fail("exception");
 		}
+	}
+	
+	public void getEquivalentAverageTest(){
 		
+		String station = "BRIS";
+		PosAvg posTest = new PosAvg(station);
 		
+		String expected = "BOIS and BUFF,";
+		String actual = posTest.getEquivalentAverage(2);
+		
+		Assert.assertEquals(expected, actual);
 	}
 
 }
