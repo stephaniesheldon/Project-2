@@ -72,10 +72,10 @@ public class MesoInherit extends MesoAbstract {
 		averages[0] = (int) Math.ceil(rawAvg);
 		averages[1] = (int) Math.floor(rawAvg);
 		if((rawAvg % 1) < 0.5){
-			averages[2] = (int) rawAvg;
+			averages[2] = (int) Math.floor(rawAvg);
 		}
 		else{
-			averages[2] = averages[0];
+			averages[2] = (int) Math.ceil(rawAvg);
 		}
 		
 		
@@ -83,10 +83,9 @@ public class MesoInherit extends MesoAbstract {
 		return averages;
 	}
 
-	public String letterAverage() {
-		char character = (char) averages[2];
-		String toReturn = "" + character;
-		return toReturn;
+	public char letterAverage() {
+		char character = (char) this.calAverage()[2];
+		return character;
 	}
 
 }
