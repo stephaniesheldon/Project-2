@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class LetterAvg {
 
-	private String letterAverage;
+	private char letterAverage;
 	private ArrayList<String> matchingNames;
 	
-	public LetterAvg(String letterAverage) {
+	public LetterAvg(char letterAverage) {
 		this.letterAverage = letterAverage;
 	}
 
-	public String numberOfStationWithLetterAvg() throws IOException {
+	public int numberOfStationWithLetterAvg() throws IOException {
 		
 		
 			matchingNames = new ArrayList<String>();
@@ -19,26 +19,31 @@ public class LetterAvg {
 			ArrayList<MesoStation> allNames = MesoInherit.readFile("Mesonet.txt");
 			for(int i = 0; i<77; i++){
 				String stationName = allNames.get(i).getStID();
-				String firstLetter = stationName.substring(0,1);
+				char firstLetter = stationName.charAt(0);
 				
-				if(firstLetter.equals(letterAverage)){
+				if(firstLetter == letterAverage){
 					matchingNames.add(stationName);
 				}	
 			}
 			
 			int numOfSame = matchingNames.size();
-			String toReturn = Integer.toString(numOfSame);
-		return toReturn;	
+		return numOfSame;	
 	}
 	
 	
 	public String toString(){
+		try{
+		this.numberOfStationWithLetterAvg();
 		String toReturn;
-		toReturn = "\nThey are:\n";
+		toReturn = "\nThey are:";
 		for(int i = 0; i < matchingNames.size(); i++){
-			toReturn = toReturn + matchingNames.get(i) + "\n";
+			toReturn = toReturn +"\n" + matchingNames.get(i);
 		}
 		return toReturn;
+		}
+		catch(IOException e){
+			return null;
+		}
 	}
 	
 	
