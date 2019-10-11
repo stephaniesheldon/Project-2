@@ -15,7 +15,7 @@ public class LetterAvgTest {
 	}
 
 	@Test
-	public void test() throws IOException {
+	public void letterAvgtest() throws IOException {
 		LetterAvg letterAvgTest = new LetterAvg("C");
 		String actual = letterAvgTest.numberOfStationWithLetterAvg();
 		
@@ -23,4 +23,13 @@ public class LetterAvgTest {
 		Assert.assertEquals(expected, actual);
 	}
 
+	
+	public void toStringTest(){
+		LetterAvg letterAvgTest = new LetterAvg("C");
+		String actual = letterAvgTest.toString();
+		
+		String expected = "\nThey are:\nCAMA\nCARL\nCENT\nCHAN\nCHER\nCHEY\nCHIC\nCLAY\nCLOU\nCOOK\nCOPA";
+		
+		Assert.assertEquals(expected,actual);
+	}
 }
